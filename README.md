@@ -255,31 +255,31 @@ Giving you a unique URL for each port
 In case you encounter the `FetchClaimException` while claiming your credential inside the Polygon ID wallet :
 
 <div align="center">
-    <img src="claimException.jpeg" alt="claimException">
+    <img src="img/claimException.jpeg" alt="claimException">
 </div>
 
 We will use the issuer api to create a claim between the issuer did in my example `did:polygonid:polygon:amoy:2qX1AAvCrMaSdU3QF6oPUzdt81pcAQZHXeKThJ9WYZ` and the wallet `did:polygonid:polygon:amoy:2qTRN7M4xURsHLKffuoomJ624M4THqFKqwHFscw2sw` :
 
 <div align="center">
-    <img src="createClaim.png" alt="createClaim">
+    <img src="img/createClaim.png" alt="createClaim">
 </div>
 
 Get the claim QR code 
 
 <div align="center">
-    <img src="claimQR.png" alt="claimQR">
+    <img src="img/claimQR.png" alt="claimQR">
 </div>
 
 And verify if the `url` in the json output is pointing to your localhost or the ngork tunnel. If needed, use [a qr code generator](https://smalldev.tools/qr-code-generator-online) to point to the correct url :
 
 <div align="center">
-    <img src="qrGenerator.png" alt="qrGenerator">
+    <img src="img/qrGenerator.png" alt="qrGenerator">
 </div>
 
 Scan the QR code with your PolygonID wallet and the credential should be correctly added :
 
 <div align="center">
-    <img src="credentialAdded.jpeg" alt="credentialAdded">
+    <img src="img/credentialAdded.jpeg" alt="credentialAdded">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

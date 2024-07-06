@@ -4,7 +4,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#prerequisites">Prerequisites</a>
+      <a href="#environment">Environment</a>
       <ul>
         <li><a href="#windows-subsystem-for-linux">Windows Subsystem for Linux</a></li>
         <li><a href="#docker-desktop">Docker Desktop</a></li>
@@ -22,8 +22,8 @@
 </details>
 
 
-<!-- PREREQUISITES -->
-## Prerequisites
+<!-- ENVIRONMENT -->
+## Environment
 
 <!-- WINDOWS-SUBSYSTEM-FOR-LINUX -->
 ### Windows Subsystem for Linux
@@ -149,6 +149,52 @@ cp .env-issuer.sample .env-issuer
 cp .env-ui.sample .env-ui
 ```
 
+With your favorite IDE, edit the `ISSUER_ETHEREUM_URL=` variable inside the `.env-issuer` file with your Remote Procedure Call, essential for communication between the client the blockchain network. I will be using [ankr.](https://www.ankr.com/)
 
+Start Docker Desktop and within your Ubuntu environment, point to your issuer-node directory and start the infrastucture :
+
+```
+cd /mnt/c/Users/romai/Desktop/issuer-node
+```
+
+```
+make up
+```
+
+Add your crypto wallet to the vault. We will be using a [MetaMask](https://metamask.io/) wallet. Open the extension, login and retrieve your private key from your account settings :
+
+<div align="center">
+    <img src="img/metaMask.png" alt="metaMask">
+</div>
+
+```
+make private_key=<your private key> add-private-key
+```
+
+To add a token to the `ISSUER_KEY_STORE_TOKEN=` variable inside the `.env-issuer` file, enter :
+
+```
+make add-vault-token
+```
+
+Generate an Issuer DID
+
+```
+make generate-issuer-did
+```
+
+Run the api and ui :
+
+```
+make run
+```
+
+```
+make run-ui
+```
+
+You can reach the issuer on `http://localhost:3001` with the login `user-issuer` and password `password-issuer`
+You can reach the ui api on `http://localhost:3002` with the login `user-api` and password `password-api`
+You can reach ui on `http://localhost:8088` with the login `user-ui` and password `password-ui`
 
 

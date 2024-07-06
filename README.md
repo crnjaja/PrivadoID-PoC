@@ -193,8 +193,53 @@ make run
 make run-ui
 ```
 
-You can reach the issuer on `http://localhost:3001` with the login `user-issuer` and password `password-issuer`
+You can reach the issuer api on `http://localhost:3001` with the login `user-issuer` and password `password-issuer`
+
 You can reach the ui api on `http://localhost:3002` with the login `user-api` and password `password-api`
-You can reach ui on `http://localhost:8088` with the login `user-ui` and password `password-ui`
 
+You can reach the ui on `http://localhost:8088` with the login `user-ui` and password `password-ui`
 
+The issuer api need to be tunneled :
+
+```
+ngrok http 3001
+```
+
+Giving you a unique URL :
+
+<div align="center">
+    <img src="img/ngrok3001.png" alt="ngrok3001">
+</div>
+
+To be able to tunnel multiple port at once with the free solution, first check where the `ngrok.yml` file is located :
+
+```
+ngrok config check
+```
+
+Add this under your version and authtoken variables :
+
+```
+tunnels:
+  app3001:
+    addr: 3001
+    proto: http
+  app3002:
+    addr: 3002
+    proto: http
+  app8088:
+    addr: 8088
+    proto: http
+```
+
+Save and start it :
+
+```
+ngrok start --all
+```
+
+Giving you a unique URL for each port
+
+<div align="center">
+    <img src="img/ngrokAll.png" alt="ngrokAll">
+</div>

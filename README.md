@@ -255,7 +255,7 @@ Giving you a unique URL for each port
 In case you encounter the `FetchClaimException` while claiming your credential inside the Polygon ID wallet :
 
 <div align="center">
-    <img src="img/claimException.jpeg" alt="claimException">
+    <img src="img/claimException.jpeg" alt="claimException" width="30%" >
 </div>
 
 We will use the issuer api to create a claim between the issuer did in my example `did:polygonid:polygon:amoy:2qX1AAvCrMaSdU3QF6oPUzdt81pcAQZHXeKThJ9WYZ` and the wallet `did:polygonid:polygon:amoy:2qTRN7M4xURsHLKffuoomJ624M4THqFKqwHFscw2sw` :
@@ -279,7 +279,7 @@ And verify if the `url` in the json output is pointing to your localhost or the 
 Scan the QR code with your PolygonID wallet and the credential should be correctly added :
 
 <div align="center">
-    <img src="img/credentialAdded.jpeg" alt="credentialAdded">
+    <img src="img/credentialAdded.jpeg" alt="credentialAdded" width="30%">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

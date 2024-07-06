@@ -6,19 +6,15 @@
     <li>
       <a href="#prerequisites">Prerequisites</a>
       <ul>
-        <li><a href="#wsl">Windows Subsystem for Linux</a></li>
-        <li><a href="#dockers">Docker Desktop</a></li>
-        <li><a href="#makefile">Makefile Toolchain</a></li>
+        <li><a href="#windows-subsystem-for-linux">Windows Subsystem for Linux</a></li>
+        <li><a href="#docker-desktop">Docker Desktop</a></li>
+        <li><a href="#makefile-toolchain">Makefile Toolchain</a></li>
         <li><a href="#ngrok">Ngrok</a></li>
       </ul>
     </li> 
     <li>
       <a href="#issuernode">Issuer Node</a>
       <ul>
-        <li><a href="#wsl">Windows Subsystem for Linux</a></li>
-        <li><a href="#dockers">Docker Desktop</a></li>
-        <li><a href="#makefile">Makefile Toolchain</a></li>
-        <li><a href="#ngrok">Ngrok</a></li>
       </ul>
     </li> 
     <li><a href="#contributors">Contributors</a></li>
@@ -29,7 +25,7 @@
 <!-- PREREQUISITES -->
 ## Prerequisites
 
-<!-- WSL -->
+<!-- WINDOWS-SUBSYSTEM-FOR-LINUX -->
 ### Windows Subsystem for Linux
 
 First of all, you will need a Unix-bases operating system to be able to run PrivadoID issuer node. To do so, we will install and use Ubuntu.
@@ -58,12 +54,12 @@ Update the subsystem :
 wsl --update
 ```
 
-<!-- DOCKERS -->
+<!-- DOCKER-DESKTOP -->
 ### Docker Desktop
 
 To be able to execute the node's containers, install [Docker Desktop.](https://www.docker.com/products/docker-desktop/)
 
-<!-- MAKEFILE -->
+<!-- MAKEFILE-TOOLCHAIN -->
 ### Makefile toolchain
 
 We will run the code with make commands. To be able to do so, first install Chocolatey via PowerShell with admin privileges :

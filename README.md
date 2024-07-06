@@ -7,22 +7,18 @@
       <a href="#prerequisites">Prerequisites</a>
       <ul>
         <li><a href="#wsl">Windows Subsystem for Linux</a></li>
-        <li><a href="#blockchain">Blockchain</a></li>
-        <li><a href="#token">Token</a></li>
-        <li><a href="#smart-contracts">Smart contracts</a></li>
-        <li><a href="#zero-knowledge-proof">Zero knowledge proof</a></li>
-        <li><a href="#identity-models">Identity models</a></li>
-        <li><a href="#know-your-customer">Know Your Customer</a></li>
-        <li><a href="#airdrop">Airdrop</a></li>
-        <li><a href="#dapps">dApps</a></li>
-        <li><a href="#decentralized-identifiers">Decentralized Identifiers</a></li>
-        <li><a href="#virtual-credentials">Virtual credentials</a></li>
-        <li><a href="#digital-wallet">Digital wallet</a></li>
+        <li><a href="#dockers">Docker Desktop</a></li>
+        <li><a href="#makefile">Makefile Toolchain</a></li>
+        <li><a href="#ngrok">Ngrok</a></li>
       </ul>
     </li> 
     <li>
-      <a href="#privado-id">Privado ID</a>
+      <a href="#issuernode">Issuer Node</a>
       <ul>
+        <li><a href="#wsl">Windows Subsystem for Linux</a></li>
+        <li><a href="#dockers">Docker Desktop</a></li>
+        <li><a href="#makefile">Makefile Toolchain</a></li>
+        <li><a href="#ngrok">Ngrok</a></li>
       </ul>
     </li> 
     <li><a href="#contributors">Contributors</a></li>
@@ -62,11 +58,12 @@ Update the subsystem :
 wsl --update
 ```
 
-<!-- Dockers -->
+<!-- DOCKERS -->
 ### Docker Desktop
 
 To be able to execute the node's containers, install [Docker Desktop.](https://www.docker.com/products/docker-desktop/)
 
+<!-- MAKEFILE -->
 ### Makefile toolchain
 
 We will run the code with make commands. To be able to do so, first install Chocolatey via PowerShell with admin privileges :
@@ -92,3 +89,62 @@ And also verify your installation :
 ```
 make --version
 ```
+
+<!-- NGROK -->
+### Ngrok
+
+The issuer node API must be publicly reachable. We will use ngrok as tunneling service. Download and unzip it with your terminal :
+
+```
+Invoke-WebRequest -Uri "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip" -OutFile "ngrok-stable-windows-amd64.zip"
+```
+```
+Expand-Archive -Path "ngrok-stable-windows-amd64.zip" -DestinationPath "C:\ngrok"
+```
+
+Add ngrok to your PATH : 
+
+- Open System Properties (Win + Pause/Break).
+- Click on "Advanced system settings".
+- Click on "Environment Variables".
+- Under "System variables", find the "Path" variable, select it, and click "Edit".
+- Click "New" and add the path to the ngrok directory, e.g., C:\ngrok.
+- Click "OK" to close all windows.
+
+And verify your installation :
+
+```
+ngrok version
+
+```
+
+<!-- ISSUERNODE -->
+## Issuer Node
+
+In this chapter, we will install and setup the issuer node.
+
+Firstly, clone the official issuer-node repo on your Windows environnement :
+
+```
+cd C:\Users\romai\Desktop\
+```
+
+```
+gh repo clone 0xPolygonID/issuer-node
+```
+
+And copy and rename all 3 .env sample files :
+
+```
+cd C:\Users\romai\Desktop\issuer-node
+```
+
+```
+cp .env-api.sample .env-api
+cp .env-issuer.sample .env-issuer
+cp .env-ui.sample .env-ui
+```
+
+
+
+
